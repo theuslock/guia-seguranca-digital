@@ -20,12 +20,15 @@
     .wrap{max-width:var(--container); margin:0 auto; padding:20px}
 
     header.site{
-      display:flex; align-items:center; justify-content:space-between; gap:20px; padding:18px 0;
+      display:flex; align-items:center; justify-content:space-between; gap:20px; padding:18px 0; flex-wrap: wrap;
     }
-    .brand{display:flex; gap:14px; align-items:center}
+    .brand{display:flex; gap:14px; align-items:center; flex-wrap: wrap}
     .logo{width:48px; height:48px; border-radius:10px; background:linear-gradient(135deg,var(--accent),var(--accent-2)); display:flex; align-items:center; justify-content:center; font-weight:700; color:#032; font-size:18px}
     .brand h1{margin:0; font-size:18px}
     .brand p{margin:0; color:var(--muted); font-size:13px}
+
+    .badges{display:flex; gap:10px; margin-top: 10px; flex-wrap: wrap;}
+    .badges img{height: 28px;}
 
     nav{display:flex; gap:10px; align-items:center}
     .btn{background:transparent; border:1px solid rgba(255,255,255,0.06); padding:8px 12px; border-radius:10px; color:var(--accent); text-decoration:none; font-weight:600}
@@ -43,7 +46,6 @@
 
     footer{margin-top:36px; padding:26px 0; color:var(--muted); text-align:center}
 
-    /* responsive */
     .toc{display:flex; flex-direction:column; gap:8px}
     .toc a{color:var(--accent); text-decoration:none; font-weight:600}
 
@@ -53,13 +55,10 @@
       .mobile-nav{display:flex; gap:10px}
     }
 
-    /* accessible focus */
     a:focus, button:focus{outline:3px solid rgba(76,194,255,0.18); outline-offset:3px}
 
-    /* floating contact */
-    .contact-fab{position:fixed; right:18px; bottom:18px; background:linear-gradient(135deg,var(--accent),var(--accent-2)); color:#031627; width:56px; height:56px; border-radius:12px; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 30px rgba(76,194,255,0.12); text-decoration:none}
+    .contact-fab{position:fixed; right:18px; bottom:18px; background:linear-gradient(135deg,var(--accent),var(--accent-2)); color:#031627; width:56px; height:56px; border-radius:12px; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 30px rgba(76,194,255,0.12); text-decoration:none; font-size: 22px;}
 
-    /* print tweaks */
     @media print{body{background:white;color:black} .contact-fab, nav, .toc{display:none}}
   </style>
 </head>
@@ -71,6 +70,15 @@
         <div>
           <h1>TheusWeb — Segurança Digital</h1>
           <p class="small">Proteção simples, clara e eficiente</p>
+          <!-- ✅ BOTÕES NO CABEÇALHO -->
+          <div class="badges">
+            <a href="https://theuslock.github.io/guia-seguranca-digital/" target="_blank">
+              <img src="https://img.shields.io/badge/🌐_Ver_Projeto-%232ea44f?style=for-the-badge" alt="Ver Projeto" />
+            </a>
+            <a href="https://instagram.com/theus_king.c" target="_blank">
+              <img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" />
+            </a>
+          </div>
         </div>
       </div>
 
@@ -89,7 +97,16 @@
         <div class="intro">
           <h2>Guia de Segurança Digital</h2>
           <p>Um guia prático e fácil de entender para proteger suas contas, dados e dispositivos. Sem linguagem técnica — feito para todo mundo.</p>
-          <p class="small" style="margin-top:12px">Desenvolvido por TheusWeb — precisa de um site profissional? <a href="https://instagram.com/theus_king.c" target="_blank" style="color:var(--accent)">Fale conosco</a>.</p>
+          <!-- ✅ BOTÕES TAMBÉM NA APRESENTAÇÃO -->
+          <div class="badges" style="margin: 16px 0;">
+            <a href="https://instagram.com/theus_king.c" target="_blank">
+              <img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Siga no Instagram" />
+            </a>
+            <a href="https://wa.me/5511949982510" target="_blank">
+              <img src="https://img.shields.io/badge/-WhatsApp-%2325D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="Chamar no WhatsApp" />
+            </a>
+          </div>
+          <p class="small">Desenvolvido por TheusWeb — precisa de um site profissional? <a href="https://instagram.com/theus_king.c" target="_blank" style="color:var(--accent)">Fale conosco</a>.</p>
         </div>
 
         <aside>
@@ -184,7 +201,7 @@
         </article>
 
         <section style="margin-top:22px; text-align:center">
-          <a id="contato" href="https://instagram.com/theus_king.c" target="_blank" class="btn">Falar com TheusWeb</a>
+          <a id="contato" href="https://instagram.com/theusweb_" target="_blank" class="btn">Falar com TheusWeb</a>
         </section>
 
       </section>
@@ -198,7 +215,6 @@
   <a class="contact-fab" href="https://wa.me/5511949982510" title="Falar no WhatsApp" target="_blank">💬</a>
 
   <script>
-    // smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
       a.addEventListener('click', function(e){
         const href = this.getAttribute('href');
