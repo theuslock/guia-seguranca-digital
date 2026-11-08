@@ -31,4 +31,4 @@ Este guia foi criado com o objetivo de tornar conceitos de segurança digital si
 
 ## 📄 Licença
 
-MIT — sinta-se à vontade para estudar, usar e contribuir.
+MIT — Sinta-se à vontade para estudar, usar e contribuir.
